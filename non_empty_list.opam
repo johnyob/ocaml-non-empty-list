@@ -1,0 +1,11 @@
+opam-version: "2.0"
+name: "non_empty_list"
+version: "0.1"
+depends: [ 
+  "ocaml" 
+]
+build: [
+  ["./configure" "--prefix=%{prefix}%"]
+  [make]
+]
+install: [make "install"]
