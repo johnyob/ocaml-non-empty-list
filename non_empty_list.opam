@@ -3,6 +3,8 @@ name: "non_empty_list"
 version: "0.1"
 depends: [ 
   "ocaml" 
+  "base"
+  "ppx_deriving"
 ]
 build: [
   ["./configure" "--prefix=%{prefix}%"]
