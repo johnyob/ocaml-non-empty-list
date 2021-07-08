@@ -2,7 +2,7 @@ open Base
 
 let invalid_argf = Printf.invalid_argf
 
-type 'a t = ( :: ) of 'a * 'a list [@@deriving eq, ord]
+type 'a t = ( :: ) of 'a * 'a list [@@deriving eq, ord, show]
 type 'a non_empty_list = 'a t
 
 let init n ~f =

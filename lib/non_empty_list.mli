@@ -1,7 +1,7 @@
 open Base
 
 (** A non-empty list is defined as a immutable (singly) linked list containing at least 1 element.
-    Identical in terms of complexity to [list]. The API is inspired by {!Base.List} 
+    Identical in terms of complexity to [List]. The API is inspired by Janestreet's [Base.List] 
     (but is not identical). *)
 
 (** The non-empty list type. The use of the [( :: )] infix constructor
@@ -9,7 +9,7 @@ open Base
     
     For example, a singleton is given by [ [1] ]. A list containing 2 elements is given by
     [ [1; 2] ]. *)
-type 'a t = ( :: ) of 'a * 'a list [@@deriving eq, ord]
+type 'a t = ( :: ) of 'a * 'a list [@@deriving eq, ord, show]
 
 type 'a non_empty_list = 'a t
 
@@ -111,7 +111,7 @@ val find_mapi_exn : 'a t -> f:(int -> 'a -> 'b option) -> int * 'b
 
 (** [Or_unequal_lengths] is used for functions that take multiple non-empty lists (denoted [t1], etc).
     Defines the dependent type: [{'a : length t1 = length t2 = ... length tn}]. 
-    Extends the {!Base.List.Or_unequal_lengths} implementation with the Monad methods, improves 
+    Extends the [Base.List.Or_unequal_lengths] implementation with the Monad methods, improves 
     readabily and reuseability of other library functions. *)
 module Or_unequal_lengths : sig
   include module type of List.Or_unequal_lengths
