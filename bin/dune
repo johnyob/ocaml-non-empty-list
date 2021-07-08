@@ -1,4 +1,0 @@
-(executable
- (public_name non_empty_list)
- (name main)
- (libraries non_empty_list))
