@@ -7,12 +7,12 @@ dev-repo: "git+https://github.com/johnyob/ocaml-non-empty-list.git"
 name: "non_empty_list"
 version: "0.1"
 depends: [ 
-  "ocaml" 
-  "dune"
-  "base"
-  "ppx_deriving"
+  "ocaml" { >= "4.08.0" }
+  "dune" { >= "2.8" }
+  "base" { >= "0.14.1" }
+  "ppx_deriving" { >= "4.5" }
   "ocamlformat"
-  "alcotest"
+  "alcotest" {with-test}
 ]
 license: "MIT"
 synopsis: "A non empty list library for OCaml"
@@ -26,4 +26,4 @@ providing similar complexity and functions to Base.List.
 build: [
   ["dune" "build" "-p" name]
 ]
-run-test: ["dune" "runtest" "-p" "name"]
+run-test: ["dune" "runtest" "-p" name]
