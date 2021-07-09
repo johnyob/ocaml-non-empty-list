@@ -2,8 +2,8 @@
  (name non_empty_list)
  (libraries alcotest non_empty_list))
 
-(rule
- (alias runtest)
- (deps non_empty_list.exe)
- (action
-  (run %{deps} -q --color=always)))
+; (rule
+;  (alias runtest)
+;  (deps non_empty_list.exe)
+;  (action
+;   (run %{deps} -q --color=always)))
